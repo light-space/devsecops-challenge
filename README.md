@@ -12,13 +12,13 @@ Welcome! This repository is a small, self-contained "mini platform" that resembl
 > **Timebox:** ~4 hours. Partial completion is OK. Document tradeoffs and what you'd do next.
 
 ## Your tasks
-Go through and review the provided files (app, deployment, infrastructure).
-Highlight issues.
-Fix as much as possible.
-Add missing parts you believe are necessary.
-Draw simple sketches when possible to explain flows for example in `docs` dir.
-Take notes in `docs/NOTES.md`.
-Think about observability, draft a section for that, what would you check? what would you ensure exists? etc ...
+1. Go through and review the provided files (app, deployment, infrastructure).
+2. Highlight issues.
+3. Fix as much as possible.
+4. Add missing parts you believe are necessary.
+5. Draw simple sketches when possible, to explain flows for example, in `docs` dir.
+6. Take notes in `docs/NOTES.md`.
+7. Think about observability, draft a section for that, what would you check? what would you ensure exists? etc ...
 
 ## Notes
 - Don't chase perfection; choose good defaults.
