@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Backend - setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+
+      - name: Backend - build
+        working-directory: backend
+        run: ./gradlew clean build
+
+      - name: Frontend - setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Frontend - install & build
+        working-directory: frontend
+        run: |
+          npm install
+          npm run build
+
+      - name: Configure AWS credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: eu-central-1
+        run: |
+          echo "Configured AWS creds for region $AWS_DEFAULT_REGION"
+          env | sort | sed -n '1,120p'
+
+      - name: Deploy (placeholder)
+        if: github.ref == 'refs/heads/main'
+        run: echo "Deploying to production... (placeholder)"
