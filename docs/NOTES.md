@@ -1,4 +1,4 @@
-# SECURITY_NOTES
+# NOTES
 
 (Write your notes here, 1-2 pages max)
 
