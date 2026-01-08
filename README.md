@@ -2,6 +2,7 @@
 
 Welcome! This repository is a small, self-contained "mini platform" that resembles a real setup at Light:
 - AWS + EKS/Fargate
+- AWS Aurora/RDS is used for postgres
 - Terraform for infrastructure
 - Tanka/Jsonnet for Kubernetes manifests
 - GitHub Actions CI/CD
